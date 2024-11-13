@@ -28,6 +28,8 @@ fetch(apiUrl+"/todos",{
 if (res.ok) {
   //add item to list
   setTodos([...todos, { title, description }]);
+  setTitle("");
+  setDescription("");
   setMessage("Item Added Successfully");
   setTimeout(()=>{
     setMessage('')
@@ -87,6 +89,8 @@ const handleUpdate = ()=>{
 
 
           setTodos(updatedTodo);
+          setEditTitle("");
+          setEditDescription("");
           setMessage("Item Updated Successfully");
           setTimeout(() => {
             setMessage("");
